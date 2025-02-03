@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front-End Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/ce25cac258.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/Logobackground.png" class="logo" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Software Engineer</p>
+          <h1>Hi, Im Nnaemeka Onochie</h1>
+        </div>
+      </div>
+    </div>
+    <!--------------about------------------>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/image.png" />
+          </div>
+          <div class="about-col-2"></div>
+          <h1 class="sub-title">About Me</h1>
+          <p>
+            I am Nnaemeka, beyond my technical proficiency in Front-End
+            developemnt, I am well-prepared to confront any challenges that may
+            arise. Additionally, I am eager to absorb knowledge from developers
+            and recruiters to enhance my programming expertise. Backed by my
+            academic background in computer science and a keen interest in
+            transforming concepts into practical software solutions, I am eager
+            to embark on a collaborative journey. My adaptable nature, effective
+            communication skills, and expertise in GIS promise to contribute to
+            success in an insights and effective problem-solving world.
+          </p>
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">
+              Skills
+            </p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li>
+                <span>Front-End developemnt</span><br />Designing Websites and
+                user interfaces
+              </li>
+              <li>
+                <span>Software developemnt</span><br />Proficient in c++,
+                Python, Java etc.
+              </li>
+              <li><span>API's</span><br />API developement and integration</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li>
+                <span>2024-current</span><br />Freelance Software Developer
+              </li>
+              <li><span>2022-current</span><br />MRA at walmart</li>
+              <li><span>2025</span><br />Software Engineer</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li>
+                <span>2022-2024</span><br />Associates in Computer Science
+              </li>
+              <li>
+                <span>2026</span><br />B.S in Computer Science with Artificial
+                Science Certificate
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-----------------services----------------->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Skilled in designing and developing responsive, user-friendly
+              websites using HTML, CSS, JavaScript, and modern frameworks like
+              React to ensure seamless experiences across all devices. Focused
+              on optimizing website performance, SEO, and accessibility by
+              implementing best practices, reducing load times, and ensuring
+              WCAG compliance for inclusive user experiences.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-sellsy"></i>
+            <h2>Ecommerce Developement</h2>
+            <p>
+              Designing and developing custom e-commerce interfaces using
+              platforms like Shopify, WooCommerce, or custom-built React/Next.js
+              solutions. Integrating payment gateways such as Stripe, PayPal,
+              and Apple Pay.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-webflow"></i>
+            <h2>Website Optimization</h2>
+            <p>
+              Optimizing website speed and performance through lazy loading,
+              caching, and minification techniques. Ensuring cross-browser
+              compatibility and mobile responsiveness for a seamless user
+              experience.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!------------------portfolio--------------->
+  <div>id = "portfolio"</div>
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+  </body>
+</html>
