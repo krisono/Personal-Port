@@ -15,14 +15,17 @@
       <div class="container">
         <nav>
           <img src="images/Logobackground.png" class="logo" />
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
           </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
+
         <div class="header-text">
           <p>Software Engineer</p>
           <h1>Hi, Im Nnaemeka Onochie</h1>
@@ -34,7 +37,7 @@
       <div class="container">
         <div class="row">
           <div class="about-col-1">
-            <img src="images/image.png" />
+            <img src="images/me3.png" />
           </div>
           <div class="about-col-2"></div>
           <h1 class="sub-title">About Me</h1>
@@ -135,8 +138,92 @@
         </div>
       </div>
     </div>
-  <!------------------portfolio--------------->
-  <div>id = "portfolio"</div>
+    <!------------------portfolio--------------->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/Nnaemeka Onochie.png" />
+            <div class="layer">
+              <h3>Ecommerce Website</h3>
+              <p>The website allows users to shop online</p>
+              <a href="#"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/Nnaemeka Onochie.png" />
+            <div class="layer">
+              <h3>Portfolio Website</h3>
+              <p>The website allows people to shop online</p>
+              <a href="#"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/logo.png" />
+            <div class="layer">
+              <h3>Empty</h3>
+              <p>The website allows users to shop online</p>
+              <a href="#"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+    <!-------------------------contact-------------->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-paper-plane"></i>kristopheronochie@gmail.com
+            </p>
+            <p><i class="fa-solid fa-phone"></i>3174998157</p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/nnaemeka-onochie/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/krisono"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </div>
+            <a href="images/NnaemekaCV.pdf" download class="btn bt2"
+              >Download CV</a
+            >
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type=" email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright © Nnaemeka.</p>
+      </div>
+    </div>
+
     <script>
       var tablinks = document.getElementsByClassName("tab-links");
       var tabcontents = document.getElementsByClassName("tab-contents");
@@ -151,6 +238,35 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab");
       }
+    </script>
+    <script>
+      var sidemeu = document.getElementsById("sidemenu");
+
+      function opennmenu() {
+        sidemeu.style.right = "0";
+      }
+
+      function closemenu() {
+        sidemeu.style.right = "-200px";
+      }
+    </script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyO4fF2FZktRL8Z2mCANoLsDDvAgyTf8JEtg0pLGIi3QADC3moEz-g0GcT-lclGQ-2h/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg")
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form)})
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },5000)
+            form.reset()
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
   </body>
 </html>
